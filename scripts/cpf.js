@@ -8,17 +8,17 @@ btnV.addEventListener("click",verificaListener);
 var btnG = document.getElementById("btn_gerar");
 btnG.addEventListener("click",geraListener);
 
-function geraListener () {
+function geraListener() {
 	var cpfR = "";
 	for (var i = 0; i < 9; i++) {
-		cpfR = cpfR + Math.trunc (Math.random()*10);
+		cpfR = cpfR + Math.trunc( Math.random() * 10 );
 	}
 	cpfR = cpfR + calculaDV1(cpfR);
 	cpfR = cpfR + calculaDV2(cpfR);
 	document.getElementById("cpf").value = cpfR;
-	document.getElementById("output").innerHTML = "CPF Gerado";
+	document.getElementById("output").innerHTML ="CPF Gerado";
 	document.getElementById("divOutput")
-			.setAtribute("class","w3-panel w3-blue");
+			.setAttribute("class","w3-panel w3-blue");
 	document.getElementById("divOutput").style.visibility = "visible";
 }
 
