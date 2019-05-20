@@ -22,14 +22,20 @@ function geraListener () {
 	document.getElementById("divOutput").style.visibility = "visible";
 }
 
-function verificaListener(){
-	alert("clicou no botão");
-	//Referencia ao Input
-	var cpfin = document.getElementById("CPF");
-	//Valor do Cpf digitado
-	var cpf = cpfin.value;
-	alert(verificaCPF(cpf));
-
+function verificaListener() {
+	var input = document.getElementById("cpf");
+	var cpf = input.value;
+	var valido = verificaCPF(cpf);
+	if(valido){
+		document.getElementById("output").innerHTML ="CPF VÁLIDO";
+		document.getElementById("divOutput")
+				.setAttribute("class","w3-panel w3-green");
+	}else{
+		document.getElementById("output").innerHTML ="CPF INVÁLIDO";
+		document.getElementById("divOutput")
+				.setAttribute("class","w3-panel w3-red");
+	}
+	document.getElementById("divOutput").style.visibility = "visible";
 }
 
 function verificaCPF(cpf){
